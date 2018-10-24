@@ -1,0 +1,10 @@
+aliyun-python-sdk-core-v3==2.9.4
+aliyun-python-sdk-kms==2.5.0
+certifi==2018.8.24
+chardet==3.0.4
+crcmod==1.7
+idna==2.7
+oss2==2.5.0
+pycryptodome==3.6.6
+requests==2.19.1
+urllib3==1.23
