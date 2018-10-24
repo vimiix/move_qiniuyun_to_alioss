@@ -8,9 +8,15 @@
 
 ## 准备工作
 
-使用 `tool/` 目录中的七牛云工具 `qshell-darwin-x64`，拉一份要搬移的七牛云 bucket 的文件清单：
+使用 `tool/` 目录中的七牛云工具 `qshell-darwin-x64`，
+
+- 配置访问骑牛云的 account 的 `access_key` 和 `secret_key`
+- 拉一份要搬移的七牛云 bucket 的文件清单：
 
 ```bash
+# 需要先设置一下七牛云的 ak, sk
+# 获取地址 https://portal.qiniu.com/user/key
+./tool/qshell-darwin-x64 account ak sk
 # 分别是 执行程序 命令行 bucket_name 生成的文件名
 ./tool/qshell-darwin-x64 listbucket2 vimiix-blog-data listbucket.txt
 ```
