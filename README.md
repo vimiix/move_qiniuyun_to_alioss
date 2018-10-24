@@ -42,7 +42,7 @@ python main.py
 
 ## 执行结果
 
-![](./static/success_result.jpg)
+![](./static/result.svg)
 
 ## License
 
