@@ -9,6 +9,7 @@
 ## 准备工作
 
 使用 `tool/` 目录中的七牛云工具 `qshell-darwin-x64`，
+*注：qshell 使用指南请参考：https://github.com/qiniu/qshell 我使用的 mac 的,其他系统请在官方 repo 下载*
 
 - 配置访问骑牛云的 account 的 `access_key` 和 `secret_key`
 - 拉一份要搬移的七牛云 bucket 的文件清单：
