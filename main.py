@@ -1,12 +1,16 @@
 # coding:utf-8
+"""
+@Author: Vimiix[vimiix.py@gmail.com]
+@Blog: www.vimiix.com
+@License: Apache-2.0
+"""
 
-from qiniu import QiniuCloud
-from alioss import AliOss
+from lib.qiniu import QiniuCloud
+from lib.alioss import AliOss
 from config import myconfig
 
 
 class Worker():
-
     def __init__(self, config):
         self.listbucket_data_path = config.listbucket_data_path
         self.data_path = "data/{}".format(config.qiniu_bucket)
@@ -16,9 +20,7 @@ class Worker():
         )
         self.alioss = AliOss(
             config.alioss_access_key_id,
-            config.alioss_access_key_secret
-        )
-        self.alioss_bucket = self.alioss.bucket(
+            config.alioss_access_key_secret,
             config.alioss_host,
             config.alioss_bucket_name
         )
@@ -28,15 +30,8 @@ class Worker():
             for line in f:
                 print('[-] Get line %s' % line.strip())
                 filename = line.split('\t')[0]
-                self.qiniu.request_and_save(
-                    filename,
-                    self.data_path
-                )
-                self.alioss.upload(
-                    self.data_path,
-                    filename,
-                    self.alioss_bucket
-                )
+                self.qiniu.download(filename, self.data_path)
+                self.alioss.upload(filename, self.data_path)
 
 
 if __name__ == '__main__':

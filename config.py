@@ -1,4 +1,9 @@
 # coding:utf-8
+"""
+@Author: Vimiix[vimiix.py@gmail.com]
+@Blog: www.vimiix.com
+@License: Apache-2.0
+"""
 
 
 class MyConfig:
@@ -8,9 +13,9 @@ class MyConfig:
 
     # 七牛云的外链域名
     # (例如 http://omfis13un.bkt.clouddn.com)
-    qiniu_base_url = 'http://omfis13un.bkt.clouddn.com'
+    qiniu_base_url = ''
     # 七牛云bucket名
-    qiniu_bucket = 'vimiix-blog-data'
+    qiniu_bucket = ''
 
     # ALIOSS access_key 的 id 和 secret
     # 请保密，不要上传到公开网络
@@ -18,8 +23,8 @@ class MyConfig:
     alioss_access_key_secret = ''
 
     # ALIOSS 概览中外网访问的 EndPoint（地域节点）
-    alioss_host = 'oss-cn-qingdao.aliyuncs.com'
-    alioss_bucket_name = 'vimiix-blog'
+    alioss_host = ''
+    alioss_bucket_name = ''
 
 
 myconfig = MyConfig()
