@@ -5,6 +5,7 @@
 @License: Apache-2.0
 """
 
+import os
 import oss2
 
 
@@ -24,9 +25,7 @@ class AliOss:
     def _bucket(self):
         return oss2.Bucket(self.auth, self.host, self.bucket_name)
 
-    def upload(self, filename, data_path):
-        self.bucket.put_object_from_file(
-            filename,
-            "{}/{}".format(data_path, filename)
-        )
-        print('[√] Upload file %s to alioss successful.' % filename)
+    def upload(self, filepath, data_path):
+        local_path = os.path.join(data_path, filepath)
+        self.bucket.put_object_from_file(filepath, local_path)
+        print('[√] Upload file %s to alioss successful.' % filepath)

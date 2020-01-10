@@ -29,9 +29,9 @@ class Worker():
         with open(self.listbucket_data_path) as f:
             for line in f:
                 print('[-] Get line %s' % line.strip())
-                filename = line.split('\t')[0]
-                self.qiniu.download(filename, self.data_path)
-                self.alioss.upload(filename, self.data_path)
+                filepath = line.split('\t')[0]
+                self.qiniu.download(filepath, self.data_path)
+                self.alioss.upload(filepath, self.data_path)
 
 
 if __name__ == '__main__':
