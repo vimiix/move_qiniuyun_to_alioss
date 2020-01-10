@@ -21,11 +21,12 @@ class QiniuCloud:
         resp = requests.get(url + filepath)
         dir_path, filename = os.path.split(filepath)
         save_path = os.path.join(save_path, dir_path)
+        local_path = os.path.join(save_path + filename)
         if resp.status_code == 404:
             print('[×] Not found file: %s' % filepath)
         elif resp.status_code == 200:
             if not os.path.exists(save_path):
                 os.makedirs(save_path)
-            with open(os.path.join(save_path + filename), "wb") as f:
+            with open(local_path, "wb") as f:
                 f.write(resp.content)
             print('[√] File: {} saved successful.'.format(filepath))

@@ -26,6 +26,8 @@ class AliOss:
         return oss2.Bucket(self.auth, self.host, self.bucket_name)
 
     def upload(self, filepath, data_path):
-        local_path = os.path.join(data_path, filepath)
+        dir_path, filename = os.path.split(filepath)
+        dir_path = os.path.join(data_path, dir_path)
+        local_path = os.path.join(dir_path + filename)
         self.bucket.put_object_from_file(filepath, local_path)
         print('[√] Upload file %s to alioss successful.' % filepath)
